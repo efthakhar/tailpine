@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailWind Dashboard</title>
+    <script src="/js/alpine.js" defer></script>
+    <link rel="stylesheet" href="/css/output.css">
+    <!-- npx tailwindcss -i ./css/input.css -o ./css/output.css --watch -->
+</head>
+
+<body>
+    <div class="flex relative h-screen bg-gray-50 font-sans text-gray-900" x-data="{sidebarOpen:true}">
+
+        <div class="admin-sidebar relative shadow" :class="!sidebarOpen && 'admin-sidebar-hidden'">
+          
+            <div class="sidebar-header flex items-center sticky top-0 left-0 pl-4 py-5 z-10 bg-white">
+                <span class="text-3xl font-bold text-slate-950 italic">Agaricas</span>
+                <div class="ml-auto mr-4 mt-2 menu-icon hide-small-device-sidebar" @click="sidebarOpen = !sidebarOpen">
+                    <svg style="width:26px; height:26px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="sidebar-nav-links sticky">
+                   
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="admin-main w-full">
+            <div class="admin-header py-4 pl-5 pr-3 w-full">
+                <div class="menu-icon w-8 cursor-pointer" @click="sidebarOpen = !sidebarOpen">
+                    <svg class="fill-gray-500" 
+                    style="width:32px; height:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="admin-content mt-5 pl-5 pr-3 w-full">
+                <div class="content-header flex flex-wrap items-center justify-between w-full">
+                    <span class="h3 text-slate-950 text-3xl font-semibold mr-auto">Products</span>
+                    <span class="ml-4">
+                        <button class="btn-primary">
+                        Add New
+                       </button>
+                        <button class="ml-2 btn-secondary">
+                        Export List
+                       </button>
+                    </span>
+                </div>
+                <div class="content-main py-4">
+                   
+                    <div class="table-style-1">
+                        <div class="table-style-1-head">
+                            <h3 class="h5 text-left">Table Custom Heading</h3>
+                        </div>
+                        <table>
+                            <thead>
+                              <tr>
+                                <th >State</th>
+                                <th>City</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td >Indiana</td>
+                                <td>Indianapolis</td>
+                              </tr>
+                              <tr>
+                                <td >Indiana</td>
+                                <td>Indianapolis</td>
+                              </tr>
+                              <tr>
+                                <td >Indiana</td>
+                                <td>Indianapolis</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-style-1-bottom">
+                            <h3 class="h5 text-left">Table Custom bottom</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

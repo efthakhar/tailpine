@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+======== Admin Custom Css ===========================================
+*/
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.116) rgb(255, 255, 255);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.116);
+    border-radius: 20px;
+}
+
+.admin-sidebar {
+    width: 280px;
+    height: 100vh;
+    flex: 0 0 280px;
+    user-select: none;
+    /* border-right: 1px solid #dfdfdf; */
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    height: 100vh;
+    transition: all .3s;
+    /* z-index: 100; */
+}
+
+.admin-sidebar-hidden {
+    margin-left: -280px;
+    height: 100vh;
+    transition: all .3s;
+}
+
+.hide-small-device-sidebar {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .admin-sidebar {
+        position: absolute;
+        width: 280px;
+    }
+
+    .admin-sidebar-hidden {
+        position: absolute;
+        margin-left: -280px;
+    }
+
+    .hide-small-device-sidebar {
+        display: block;
+    }
+}
+
+
+/* Utility Classes */
+
+@layer components {
+    .btn-primary {
+        @apply text-sm font-semibold bg-blue-600 hover:bg-blue-700
+         text-white rounded-lg px-[15px] py-[6px];
+    }
+
+    .btn-secondary {
+        @apply text-sm font-semibold bg-white hover:bg-gray-50 text-slate-950 border border-gray-200 
+        rounded-lg px-[15px] py-[6px];
+    }
+
+    .table-style-1 table{
+        @apply border-collapse border border-slate-400 w-full;
+    }
+    .table-style-1 .table-style-1-head{
+        @apply text-slate-950 border border-b-0 border-gray-200 text-left px-3 py-3 bg-white rounded-t-lg;
+    }
+    .table-style-1 .table-style-1-bottom{
+        @apply text-slate-950 border border-t-0 border-gray-200 text-left px-3 py-3 bg-white rounded-b-lg;
+    }
+    .table-style-1 td{
+        @apply border border-gray-200 px-3 py-2 text-left bg-white hover:bg-gray-50;
+    }
+    .table-style-1 th{
+        @apply border border-gray-200 px-3 py-2 text-left bg-gray-50;
+    }
+}
